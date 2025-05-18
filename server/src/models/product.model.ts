@@ -35,7 +35,7 @@ const productSchema: Schema = new Schema(
       max: 1000000,
       validate: {
         validator: (value: number) => {
-          return Number.isInteger(value);
+          return value >= 0;
         },
         message: (props: any) => `${props.value} is not a valid price!`,
       },
